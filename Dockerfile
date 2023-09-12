@@ -27,6 +27,7 @@ RUN apt-get update && \
 RUN pip install --upgrade \
     black -U \
     ipykernel \
+    jupyter notebook \
     matplotlib \
     numpy \
     pandas \
