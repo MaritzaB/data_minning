@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\graphicspath{ {reports/figures/} }
+\usepackage{textcomp}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{upquote,listings}
+%\usepackage{lscape}
+\usepackage{pdflscape}
+
+\title{Instituto Politécnico Nacional \\ Centro de Investigación en Computación
+\\
+\vspace{1cm}
+    Minería de datos, técnicas y conceptos. \\ Ejercicios del capítulo 1 }
+\vspace{3cm}
+\author{
+    Ana Maritza Bello Yañez
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+\item ¿Qué es minería de datos?
+
+\textcolor{NavyBlue}{
+La minería de datos es la detección y extracción de patrones interesantes o
+desconocidos de un conjunto de datos. Refiriendose a interesantes como aquellos
+que reunen las siguientes características:}
+
+\vfill
+\begin{tabular}{|p{2.8cm}|p{7.5cm}|}
+\hline
+\textcolor{NavyBlue}{ \textbf{Válidos}.} & Para que los patrones sean válidos el conjunto de datos deben de
+estar limpios, es decir, no contener errores que puedan afectar los análisis de
+los datos.\\
+\hline
+\textcolor{NavyBlue}{ \textbf{No triviales}.} & Los patrones deben de ser interesantes, no obvios o que se
+puedan observar sin la necesidad de hacer un análisis.\\
+\hline
+\textcolor{NavyBlue}{ \textbf{Implícitos}.} & El conocimiento generado a partir de los datos debe de
+provenir del mismo conjunto de datos.\\
+\hline
+\textcolor{NavyBlue}{ \textbf{Novedosos o previamente desconocidos}. } & Va de la mano con que no deben de
+ser triviales. Es decir, deben de generar conocimiento de patrones no notados
+con anterioridad.\\
+\hline
+\textcolor{NavyBlue}{\textbf{Potencialmente útiles}.} & Es decir, que la información generada debe de
+servir para la toma de decisiones. \\
+\hline
+\end{tabular}
+\vfill
+
+
+\textcolor{NavyBlue}{La minería de datos involucra todo un proceso para transformar las grandes
+cantidades de datos en conocimiento organizado.}
+
+
+- ¿Es otra exageración?
+
+\textcolor{NavyBlue}{No. La minería de datos surge como respuesta a la necesidad
+de analizar grandes volúmenes de datos que se generan en la actualidad. Puede
+verse como el resultado inminente de la evolución de las tecnologíass de la
+información.}
+
+- ¿Es una simple transformación o aplicación de la tecnología desarrollada de
+bases de datos, estadística, aprendizaje máquina o reconocimiento de patrones?
+
+\textcolor{NavyBlue}{No. La minería de datos es una disciplina que involucra a
+todas estas áreas de la computación (bases de datos, estadística, aprendizaje
+máquina y reconocimiento de patrones) en un proceso de descubrimiento de
+conocimiento.}
+
+- Ya presentamos una aproximación de la minería de datos como resultado de la
+evolución de las tecnologías de bases de datos. ¿Consideras que la minería de
+datos también es el resultado de la evolución del aprendizaje máquina?, ¿Podrías
+presentar tales opiniones basado en el progreso histórico de esta disciplina?
+Haz lo mismo para el caso de la estadística y el reconocimiento de patrones.
+
+- Describe los pasos de un proceso de minería de datos como un proceso de
+descubrimiento de conocimiento.
+
+\begin{enumerate}
+\item \textcolor{RoyalBlue}{Limpieza de datos.} Remover datos inconsistentes o duplicados.
+\item \textcolor{RoyalBlue}{Integración de datos.} Combinar múltiples fuentes de
+datos.
+\item \textcolor{RoyalBlue}{Selección de datos.} Seleccionar los datos
+relevantes para el análisis.
+\item \textcolor{RoyalBlue}{Transformación de datos.} Convertir los datos a un
+formato apropiado para el análisis.
+\item \textcolor{RoyalBlue}{Minería de datos.} Aplicar métodos de minería de
+datos apropiados para el problema.
+\item \textcolor{RoyalBlue}{Interpretación y evaluación de los patrones
+encontrados.} Evaluar los patrones encontrados y determinar si son válidos.
+\item \textcolor{RoyalBlue}{Presentación del conocimiento.} Representar el
+conocimiento encontrado de una manera que sea útil para el usuario.
+    
+\end{enumerate}
+
+
+
+\pagebreak
+\item ¿Cuál es la diferencia de una bodega de datos de una base de datos?, ¿En
+qué son similares?
+
+\textcolor{NavyBlue}{Una base de datos es una colección de datos relacionados y
+que son almacenados en un medio persistente. Los datos están crudos, es decir no
+podemos ver información resumida, sino que cada línea de la base de datos
+corresponde a un registro. }
+
+\textcolor{NavyBlue}{Una bodega de datos es una colección de datos ya procesados
+o transformados (resumidos) que son almacenados en un medio persistente. Una
+línea de la bodega de datos corresponde a un resumen de los datos de la base de
+datos. Estos datos están orientados a un dominio específico, son integrados y
+ayudan a la toma de decisiones en la organización.}
+
+Ambas son similares en que son colecciones de datos almacenados en un medio
+persistente (disco duro o cinta magnética).
+
+\pagebreak
+\item Define cada una de las siguientes funcionalidades de la minería de datos.
+Presenta un ejemplo de cada una de ellas usando un ejemplo de una base de datos
+de la vida real con la que estés familiarizado.
+
+\begin{itemize}
+    \item Caracterización:
+    \item Discriminación:
+    \item Asociación y análisis de correlación:
+    \item Clasificación:
+    \item Regresión:
+    \item Agrupamiento:
+    \item Análisis de valores atípicos:
+\end{itemize}
+
+\pagebreak
+\item Presenta un ejemplo dónde la minería de datos es crucial para el éxito de
+un negocio. ¿Qué funcionalidades de la minería de datos necesita este negocio?
+Piensa en los tipos de patrones que podrían ser minados. ¿Estos patrones pueden
+ser generados alternativamente por procesamientos de consultas o por un simple
+análisis estadístico?
+
+\pagebreak
+\item ¿Explica la diferencia y similitud entre \textbf{clasificación y
+similitud}, \textbf{caracterización y clustering} y entre \textbf{clasificación
+y regresión}?
+
+\pagebreak
+\item Basado en tus observaciones, describe otro posible tipo de conocimiento
+que necesita ser descubierto por métodos de minería de datos pero no ha sido
+listado en este capítulo.------
+
+\pagebreak
+\item Los \textit{valores atípicos} frecuentemente se consideran como ruido. Sin
+embargo, la \textit{basura de una persona} podría ser el \textit{tesoro de
+otra}. Por ejemplo, las excepciones las transacciones de tarjetas de crédito
+pueden ayudarnos a detectar uso fraudulento de tarjetas de crédito. Usando este
+ejemplo, propón otros dos métodos que pueden ser usados para detectar valores
+atípicos y discute cual es más confiable.
+
+\pagebreak
+\item Describe los \textbf{tres retos de la minería de datos} que tienen que ver
+con \textbf{metodologías de la minería de datos} y \textbf{asuntos de
+interacción de usuario}.
+
+\pagebreak
+\item ¿Cuáles son los mayores retos de la minería en grandes bases de datos (por
+ejemplo billones de tuplas) en comparación con las pequeñas cantidades de datos?
+
+\pagebreak
+\item Describe los mayores retos de investigación de la minería de datos en un
+dominio específico de aplicación tal como análisis de datos de streams/sensores,
+datos espacio-temporales o bioinformática.
+
+\end{enumerate}
+
+\end{document}
