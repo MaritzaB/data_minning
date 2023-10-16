@@ -32,4 +32,5 @@ RUN pip install --upgrade \
     pytest \
     -U scikit-learn \
     seaborn \
-    imblearn
+    imblearn \
+    statsmodels
