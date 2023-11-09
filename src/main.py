@@ -13,20 +13,22 @@ import pandas as pd
 from mlxtend.preprocessing import TransactionEncoder
 
 # convert dataset into dataframe
+'''
 te = TransactionEncoder()
 te_ary = te.fit(dataset).transform(dataset)
 df = pd.DataFrame(te_ary, columns=te.columns_)
 
 df = df.replace(False,0).replace(True,1)
 df = df.values.tolist()
-#print(df[0])
+print(df[0])
+'''
 
-#df = [[1,1,0],[1,0,0],[0,1,1],[0,0,0]]
-#unique_itemset =[{1},{2},{3}]
-#df = [[1,1,0,1,1],[0,1,1,0,1],[1,1,0,1,1],[1,1,1,0,1],[1,1,1,1,1],[0,1,1,1,0]]
+df = [[1,1,0],[1,0,0],[0,1,1],[0,0,0]]
+unique_itemset =[{1},{2},{3}]
+df = [[1,1,0,1,1],[0,1,1,0,1],[1,1,0,1,1],[1,1,1,0,1],[1,1,1,1,1],[0,1,1,1,0]]
 unique_itemset = [{i} for i in range(1,len(df[0])+1)]
-#print(lista_de_conjuntos)
-min_supp = 2
+print(unique_itemset)
+min_supp = 25
 M = 2
 size = len(df)
 
@@ -45,7 +47,7 @@ print("Initial DC:",DC,"\n")
 counter = 0
 T = []
 #while DC!=[] or DS!=[]:
-for p in range(6):
+for p in range(4):
 	for i in range(counter,counter+M):				#updating counter var in each itemset
 		index = i%size
 		T = transaction_to_itemset(df[index])
