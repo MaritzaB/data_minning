@@ -26,8 +26,8 @@ df = df.values.tolist()
 #df = [[1,1,0,1,1],[0,1,1,0,1],[1,1,0,1,1],[1,1,1,0,1],[1,1,1,1,1],[0,1,1,1,0]]
 unique_itemset = [{i} for i in range(1,len(df[0])+1)]
 #print(lista_de_conjuntos)
-min_supp = 0.1
-M = 80
+min_supp = 2
+M = 2
 size = len(df)
 
 #4 lists are simplemented which store the state if itemsers in the df
@@ -44,8 +44,8 @@ print("Initial DC:",DC,"\n")
 
 counter = 0
 T = []
-while DC!=[] or DS!=[]:
-#for p in range(6):
+#while DC!=[] or DS!=[]:
+for p in range(6):
 	for i in range(counter,counter+M):				#updating counter var in each itemset
 		index = i%size
 		T = transaction_to_itemset(df[index])

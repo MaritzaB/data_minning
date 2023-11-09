@@ -25,4 +25,4 @@ print(df)
 
 from mlxtend.frequent_patterns import apriori
 
-print(apriori(df, min_support=0.1, use_colnames=True))
+print(apriori(df, min_support=0.2, use_colnames=True))

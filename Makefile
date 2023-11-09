@@ -35,6 +35,8 @@ clean:
 	rm --force reports/*.out
 	rm --force reports/*.pdf
 	rm --force reports/*.toc
+	rm --force --recursive src/datasets/__pycache__
+	rm --force --recursive src/DIC/__pycache__
 
 format:
 	black --line-length 80 src/*.py
