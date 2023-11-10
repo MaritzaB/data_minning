@@ -5,7 +5,7 @@ import numpy as np
 from itertools import combinations
 
 df = pd.read_csv("apriori/Transaction.csv",header=None)
-#df = pd.read_csv("apriori/BD_Contaminantes_FP.csv",skiprows=1, nrows=1000)
+#df = pd.read_csv("apriori/BD_Contaminantes_FP.csv",skiprows=1, nrows=500)
 
 """
 dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'],
