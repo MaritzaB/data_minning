@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 from itertools import combinations
 
-#df = pd.read_csv("apriori/Transaction.csv",header=None)
-df = pd.read_csv("apriori/BD_Contaminantes_FP.csv",skiprows=1, nrows=1000)
+df = pd.read_csv("apriori/Transaction.csv",header=None)
+#df = pd.read_csv("apriori/BD_Contaminantes_FP.csv",skiprows=1, nrows=1000)
 
 """
 dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'],
@@ -13,19 +13,19 @@ dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'],
            ['Milk', 'Apple', 'Kidney Beans', 'Eggs'],
            ['Milk', 'Unicorn', 'Corn', 'Kidney Beans', 'Yogurt'],
            ['Corn', 'Onion', 'Onion', 'Kidney Beans', 'Ice cream', 'Eggs']]
+df = pd.DataFrame(dataset)
 """
-print(df.head(), "\n")
 
-#df = pd.DataFrame(dataset)
+print("Dataset of transactions \n", df, "\n")
 
 Candidate_set = []
 Frequent_set = []
 items = pd.unique(df.values.ravel('K'))
 items = items[~pd.isnull(items)]
 
-print(items, "\n")
+print("Total of unique items of the transaction database \n",items, "\n")
 
-min_support = 100
+min_support = 2
 
 for iterno in range(1,len(items)):
     Count = {}
@@ -47,13 +47,15 @@ for iterno in range(1,len(items)):
                 if all(i in val for i in txn):
                     ctr+=1
             Count[txn] = ctr
-            
+    
+    # Count the number of occurences of each item in the transactions
+    print("\nCandidate set, count")
     for k in Count.keys():
         if Count[k] >= min_support:
             intermediate.append(k)
-
-    if intermediate == []:
-        print(Frequent_set, "\n")
-        break
+        print(k, ":", Count[k])
 
     Frequent_set.append(intermediate)
+
+print("\nAll frequent sets \n",Frequent_set)
+print("\nLarge frequent set  \n",Frequent_set[iterno-2])
