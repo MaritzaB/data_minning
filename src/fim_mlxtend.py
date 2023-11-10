@@ -4,7 +4,8 @@
 
 from  datasets.base import load_market_basket
 
-dataset_file = 'market_basket.csv'
+#dataset_file = 'market_basket.csv'
+dataset_file = "BD_contaminantes_FP.csv"
 dataset = load_market_basket(dataset_file)
 
 #dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'],

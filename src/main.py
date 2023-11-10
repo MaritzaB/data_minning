@@ -4,8 +4,9 @@ from datasets.base import load_market_basket
 from DIC.DIC import subset_generator, superset_generator, subset_checker, transaction_to_itemset
 import copy
 
-
-dataset_file = 'market_basket.csv'
+"""
+dataset_file = 'BD_contaminantes_FP.csv'
+#dataset_file = 'market_basket.csv'
 dataset = load_market_basket(dataset_file)
 dataset = dataset[:10]
 
@@ -13,7 +14,7 @@ import pandas as pd
 from mlxtend.preprocessing import TransactionEncoder
 
 # convert dataset into dataframe
-'''
+
 te = TransactionEncoder()
 te_ary = te.fit(dataset).transform(dataset)
 df = pd.DataFrame(te_ary, columns=te.columns_)
@@ -21,16 +22,21 @@ df = pd.DataFrame(te_ary, columns=te.columns_)
 df = df.replace(False,0).replace(True,1)
 df = df.values.tolist()
 print(df[0])
-'''
+"""
 
+# dataset with 4 transactions of 3 items each
 df = [[1,1,0],[1,0,0],[0,1,1],[0,0,0]]
 unique_itemset =[{1},{2},{3}]
-df = [[1,1,0,1,1],[0,1,1,0,1],[1,1,0,1,1],[1,1,1,0,1],[1,1,1,1,1],[0,1,1,1,0]]
-unique_itemset = [{i} for i in range(1,len(df[0])+1)]
+
+# dataset with 5 transactions of 6 items each
+#df = [[1,1,1,0,0],[1,1,1,1,1],[1,0,1,1,0],[1,0,1,1,1],[1,1,1,1,0]]
+#unique_itemset = [{i} for i in range(1,len(df[0])+1)]
+
 print(unique_itemset)
 min_supp = 25
-M = 2
+M = 5
 size = len(df)
+print("Size of dataset:",size,"\n")
 
 #4 lists are simplemented which store the state if itemsers in the df
 DC = []
@@ -46,8 +52,8 @@ print("Initial DC:",DC,"\n")
 
 counter = 0
 T = []
-#while DC!=[] or DS!=[]:
-for p in range(4):
+while DC!=[] or DS!=[]:
+#for p in range(20):
 	for i in range(counter,counter+M):				#updating counter var in each itemset
 		index = i%size
 		T = transaction_to_itemset(df[index])

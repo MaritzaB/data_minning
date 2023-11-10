@@ -1,5 +1,5 @@
 """
-This is the basic implementation of DIC(Dynamic itemset algotithm)
+This is the basic implementation of DIC(Dynamic itemset algorithm)
 Referred from : http://www2.cs.uregina.ca/~dbd/cs831/notes/itemsets/DIC.html
 """
 
