@@ -30,12 +30,11 @@ def superset_generator(S,unique_itemset):
 			a = i.union(S)
 			result.append(a)
 			a = set()
-
 	return(result)		
 
 def subset_checker(S,FIS):
 	"""
-	takes in a set S and check if all if its len(s)-1 subsets 
+	takes in a set S and check if all of its len(s)-1 subsets 
 	are there in FIS
 	"""
 	subset = subset_generator(S,len(S)-1)
