@@ -5,7 +5,7 @@
 from  datasets.base import load_market_basket
 
 #dataset_file = 'market_basket.csv'
-dataset_file = "BD_contaminantes_FP.csv"
+dataset_file = "exercise_6.csv"
 dataset = load_market_basket(dataset_file)
 
 #dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'],
@@ -26,4 +26,4 @@ print(df)
 
 from mlxtend.frequent_patterns import apriori
 
-print(apriori(df, min_support=0.2, use_colnames=True))
+print(apriori(df, min_support=0.6, use_colnames=True))
