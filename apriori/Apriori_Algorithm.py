@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 
+'''
+Presented by:
+    - Ana Maritza Bello Yañez
+    - Otto Calzadilla Nápoles
+'''
+
 import pandas as pd
 import numpy as np
 from itertools import combinations
 
-df = pd.read_csv("apriori/Transaction.csv",header=None)
-#df = pd.read_csv("apriori/BD_Contaminantes_FP.csv",skiprows=1, nrows=500)
+#df = pd.read_csv("apriori/Transaction.csv",header=None)
+df = pd.read_csv("apriori/BD_Contaminantes_FP_2018.csv",skiprows=1)
 
 """
 dataset = [['Milk', 'Onion', 'Nutmeg', 'Kidney Beans', 'Eggs', 'Yogurt'],
@@ -25,7 +31,7 @@ items = items[~pd.isnull(items)]
 
 print("Total of unique items of the transaction database \n",items, "\n")
 
-min_support = 2
+min_support = 100
 
 for iterno in range(1,len(items)):
     Count = {}
@@ -56,6 +62,7 @@ for iterno in range(1,len(items)):
         print(k, ":", Count[k])
 
     Frequent_set.append(intermediate)
+    #pause = input("\nPress enter to continue")
 
 print("\nAll frequent sets \n",Frequent_set)
-print("\nLarge frequent set  \n",Frequent_set[iterno-2])
+print("\nAll frequent sets \n",Frequent_set[3])

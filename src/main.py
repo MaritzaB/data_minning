@@ -4,11 +4,9 @@ from datasets.base import load_market_basket
 from DIC.DIC import subset_generator, superset_generator, subset_checker, transaction_to_itemset
 import copy
 
-"""
-dataset_file = 'BD_contaminantes_FP.csv'
-#dataset_file = 'market_basket.csv'
+dataset_file = 'abc_data.csv'
+dataset_file = 'abcde_data.csv'
 dataset = load_market_basket(dataset_file)
-dataset = dataset[:10]
 
 import pandas as pd
 from mlxtend.preprocessing import TransactionEncoder
@@ -22,23 +20,27 @@ df = pd.DataFrame(te_ary, columns=te.columns_)
 df = df.replace(False,0).replace(True,1)
 df = df.values.tolist()
 print(df[0])
-"""
+
 
 # dataset with 4 transactions of 3 items each
-df = [[1,1,0],[1,0,0],[0,1,1],[0,0,0]]
-unique_itemset =[{1},{2},{3}]
+#df = [[1,1,0],[1,0,0],[0,1,1],[0,0,0]]
 
 # dataset with 5 transactions of 6 items each
 #df = [[1,1,1,0,0],[1,1,1,1,1],[1,0,1,1,0],[1,0,1,1,1],[1,1,1,1,0]]
-#unique_itemset = [{i} for i in range(1,len(df[0])+1)]
 
+unique_itemset = [{i} for i in range(1,len(df[0])+1)]
 print(unique_itemset)
-min_supp = 25
-M = 5
+
 size = len(df)
 print("Size of dataset:",size,"\n")
 
-#4 lists are simplemented which store the state if itemsers in the df
+min_supp = 1
+M = 2
+
+#min_supp = 2
+#M = 5
+
+#4 lists are simplemented which store the state if itemsets in the df
 DC = []
 DS = []	
 SC = []
@@ -110,3 +112,4 @@ while DC!=[] or DS!=[]:
 	print("DC: ",DC)
 	print("SS: ",SS)
 	print("SC: ",SC,"\n")
+	print("------------------------------------------------------\n")
