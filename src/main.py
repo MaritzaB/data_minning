@@ -5,7 +5,7 @@ from DIC.DIC import subset_generator, superset_generator, subset_checker, transa
 import copy
 
 dataset_file = 'abc_data.csv'
-dataset_file = 'abcde_data.csv'
+#dataset_file = 'abcde_data.csv'
 dataset = load_market_basket(dataset_file)
 
 import pandas as pd
