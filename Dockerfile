@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install --yes --no-install-recommends apt-utils
 RUN apt-get update && \
     apt upgrade --yes && \
     apt-get install make --yes
-    
-RUN apt-get update && apt-get install latex2html --yes
 
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends \
@@ -34,4 +32,5 @@ RUN pip install --upgrade \
     pytest \
     -U scikit-learn \
     seaborn \
-    imblearn
+    imblearn \
+    statsmodels
